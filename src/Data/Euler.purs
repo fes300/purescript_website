@@ -1,7 +1,6 @@
 module Euler where
 
 import Prelude
-
 import Data.List (range, filter)
 import Data.Foldable (sum)
 

@@ -7,4 +7,5 @@ import Effect.Console (log)
 
 main :: Effect Unit
 main = do
-  log ("The answer is " <> show answer)
+  log ("The Euler answer is " <> show answer)
+
