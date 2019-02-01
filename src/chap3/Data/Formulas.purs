@@ -1,8 +1,8 @@
 module Formulas where
 
-import Prelude
+import Prelude ((*))
 import Data.Int as Int
-import Data.Either
+import Data.Either (Either(..))
 import Math as Math
 
 circleArea :: Either Number Int -> Number
