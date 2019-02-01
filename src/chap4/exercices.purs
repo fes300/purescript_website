@@ -48,7 +48,10 @@ getTuple :: Int -> Int -> List Int
 getTuple n m = (m : n / m : Nil)
 
 getGenericFactorizations :: Int -> Int -> List (List Int)
-getGenericFactorizations m n = foldl (\xs -> \i -> ((i : n/i : Nil) : (getGenericFactorizations (i + 1) n))) Nil (getFirstDivider m n)
+getGenericFactorizations m n = foldl (recurse) Nil (getFirstDivider m n)
+  where
+    recurse :: List (List Int) -> Int -> List (List Int)
+    recurse _ i = (i : n/i : Nil) : (getGenericFactorizations (i + 1) n)
 
 getFirstDivider :: Int -> Int -> Maybe Int
 getFirstDivider m n = if n > 2 && n > m then find (\x -> mod n x == 0) (m .. (n - 1))  else Nothing
